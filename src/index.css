@@ -178,7 +178,7 @@
         @apply fixed bottom-[clamp(20px,3vw,32px)];
     }
     .hero-building {
-        @apply flex justify-center items-center w-full absolute left-0 right-0 top-1/2 z-0 pointer-events-none;
+        @apply flex justify-center items-center w-full absolute left-0 right-0 top-[60%] z-0 pointer-events-none;
         transform: translateY(-50%);
     }
     .cloud {
