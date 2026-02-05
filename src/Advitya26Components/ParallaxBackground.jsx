@@ -10,6 +10,10 @@ const ParallaxBackground = () => {
     const colosseum = useTransform(x, [0, 0.5], [0, 300]);
     const greatwall = useTransform(x, [0, 0.5], [0, 250]);
 
+    // Scroll-based blur effect
+    const blurValue = useTransform(scrollYProgress, [0.15, 0.5], [0, 12]);
+    const blur = useTransform(blurValue, (v) => `blur(${v}px)`);
+
     // Scroll-based shrink effect
     // might use these in future
     /*
@@ -23,6 +27,7 @@ const ParallaxBackground = () => {
                 className='relative h-screen overflow-y-hidden bg-[#fdfbd4] overflow-x-hidden'
                 style={{
                     transformOrigin: 'center center',
+                    filter: blur,
                 }}
             >
                 {/* Olympic Rings */}
