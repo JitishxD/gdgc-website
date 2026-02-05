@@ -1,5 +1,5 @@
 /**
- * SpotlightCard - A card component with a spotlight effect and optional grid background
+ * SpotlightCard - A card component with grid pattern background
  * 
  * @param {Object} props
  * @param {React.ReactNode} props.children - Content to render inside the card
@@ -7,12 +7,7 @@
  * @param {string} props.bgColor - Background color of the card (default: white)
  * @param {boolean} props.showGrid - Whether to show grid pattern (default: true)
  */
-export default function SpotlightCard({
-    children,
-    className = "",
-    bgColor = "white",
-    showGrid = true,
-}) {
+export default function SpotlightCard({ children, className = '', bgColor = 'white', showGrid = true }) {
     return (
         <div className={`relative p-1 ${className}`}>
             {/* Card body */}
@@ -25,15 +20,16 @@ export default function SpotlightCard({
                     <div
                         className="absolute inset-0 pointer-events-none"
                         style={{
-                            backgroundImage:
-                                "linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px)",
-                            backgroundSize: "50px 50px",
+                            backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px)',
+                            backgroundSize: '50px 50px'
                         }}
                     />
                 )}
 
                 {/* Content */}
-                <div className="relative z-2">{children}</div>
+                <div className="relative z-2">
+                    {children}
+                </div>
             </div>
         </div>
     );

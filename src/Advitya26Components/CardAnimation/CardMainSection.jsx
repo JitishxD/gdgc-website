@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState, Children } from "react";
 
 /**
- * CardMainSection - Container for SpotlightCards with scroll-based scaling animation
+ * CardMainSection - A scrollable section with scroll-based scaling
  *
  * @param {Object} props
  * @param {React.ReactNode} props.children - Card components to render (each child = one card)

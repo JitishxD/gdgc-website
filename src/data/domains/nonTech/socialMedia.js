@@ -82,34 +82,78 @@ const socialMediaDomain = {
     ],
     team: {
         lead: {
-            name: "Priyanka Roy",
+            name: "Kuhoo Champaneria",
             role: "Marketing Lead",
             avatar: "https://placehold.co/128x128",
             bio: "Digital marketing specialist with a passion for community building.",
-            linkedin: "https://linkedin.com/in/priyankaroy",
-            email: "priyanka@gdgc.dev",
+            linkedin:
+                "https://www.linkedin.com/in/kuhoo-champaneria-5b690a289/",
+            github: "",
+            email: "",
         },
         coLead: {
-            name: "Rhea Gupta",
+            name: "Atiksh Prasad",
             role: "Social Media Co-Lead",
             avatar: "https://placehold.co/128x128",
             bio: "Content strategist and community manager focused on growth.",
-            linkedin: "https://linkedin.com/in/rheagupta",
+            linkedin: "https://www.linkedin.com/in/atiksh-prasad",
             github: "",
-            email: "rhea@gdgc.dev",
+            email: "",
         },
         members: [
             {
-                name: "Ankit Verma",
-                role: "Social Media Manager",
+                name: "Vaani Aidasani",
+                role: "Co-Lead",
                 avatar: "https://placehold.co/128x128",
-                linkedin: "https://linkedin.com/in/ankitverma",
+                linkedin: "https://www.linkedin.com/in/vaaniaidasani/",
+                github: "",
             },
             {
-                name: "Megha Sharma",
-                role: "Content Strategist",
+                name: "Sachin Sundareswaran",
+                role: "Core Member",
                 avatar: "https://placehold.co/128x128",
-                linkedin: "https://linkedin.com/in/meghasharma",
+                linkedin:
+                    "https://www.linkedin.com/in/sachin-sundareswaran-66273a37b",
+                github: "",
+            },
+            {
+                name: "Akriti Khantwal",
+                role: "Core Member",
+                avatar: "https://placehold.co/128x128",
+                linkedin:
+                    "https://www.linkedin.com/in/akriti-khantwal-503a4b359",
+                github: "",
+            },
+            {
+                name: "Vedant Seth",
+                role: "Core Member",
+                avatar: "https://placehold.co/128x128",
+                linkedin: "https://www.linkedin.com/in/vedant-seth-385102322/",
+                github: "https://github.com/Vedant14092006",
+            },
+            {
+                name: "Jhanvi Srivastava",
+                role: "Core Member",
+                avatar: "https://placehold.co/128x128",
+                linkedin:
+                    "https://www.linkedin.com/in/jhanvi-srivastava-6005a2386/",
+                github: "https://github.com/Jhanvisrivastava2107",
+            },
+            {
+                name: "Ashwin Sharma",
+                role: "Core Member",
+                avatar: "https://placehold.co/128x128",
+                linkedin:
+                    "https://www.linkedin.com/in/ashwin-sharma-52b96035a/",
+                github: "https://github.com/ASHWIN-48",
+            },
+            {
+                name: "Sourav Shandilya",
+                role: "Core Member",
+                avatar: "https://placehold.co/128x128",
+                linkedin:
+                    "https://www.linkedin.com/in/sourav-shandilya-4b6165268",
+                github: "",
             },
         ],
     },
