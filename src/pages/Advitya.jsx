@@ -19,14 +19,18 @@ function Advitya() {
 
     return (
         <>
-            <div className="absolute top-0 left-0 w-full h-[10vh] z-100">
+            <div className="fixed top-0 left-0 w-full h-[10vh] z-50">
                 <GlobalNavbar />
             </div>
             <ParallaxBackground />
-            <CardMainSection bgColor="#FDFBD4" cardSize="xl">
-                <AboutCard />
-                <ChoosePathCard />
-            </CardMainSection>
+            <div className="relative z-10" style={{ marginTop: '-100vh' }}>
+                {/* Space paralax background */}
+                <div style={{ height: '100vh' }} /> 
+                <CardMainSection bgColor="#FDFBD4" cardSize="xl">
+                    <AboutCard />
+                    <ChoosePathCard />
+                </CardMainSection>
+            </div>
         </>
     );
 }
