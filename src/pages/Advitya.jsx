@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { GlobalNavbar } from "@/Advitya26Components/Navbar";
 import ParallaxBackground from "@/Advitya26Components/ParallaxBackground";
 import CardMainSection from "@/Advitya26Components/CardAnimation/CardMainSection";
+import CardMainSectionDesktop from "@/Advitya26Components/CardAnimation/CardMainSectionDesktop";
 import AboutCard from "@/Advitya26Components/AboutCard";
 import ChoosePathCard from "@/Advitya26Components/ChoosePathCard";
 import Test from "@/Advitya26Components/Test";
@@ -11,6 +12,15 @@ import "@/Advitya26Components/AdvityaMain.css";
 function Advitya() {
     // State to control navbar logo visibility - starts hidden, shows when rings fade
     const [showNavbarLogo, setShowNavbarLogo] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect mobile on mount and resize
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     useEffect(() => {
         const root = document.documentElement;
@@ -26,21 +36,38 @@ function Advitya() {
             <div className="fixed top-0 left-0 w-full h-[10vh] z-50">
                 <GlobalNavbar showLogo={showNavbarLogo} />
             </div>
-            <ParallaxBackground onRingsFadeStart={() => setShowNavbarLogo(true)} />
+            <ParallaxBackground
+                onRingsFadeStart={() => setShowNavbarLogo(true)}
+            />
 
             <div className="relative z-10" style={{ marginTop: "-100vh" }}>
                 {/* Space paralax background */}
                 <div style={{ height: "100vh" }} />
-                <CardMainSection
-                    bgColor="transparent"
-                    cardSize="2xl"
-                    direction="horizontal"
-                >
-                    <AboutCard />
-                    <ChoosePathCard />
-                </CardMainSection>
+                {isMobile ? (
+                    <CardMainSection
+                        bgColor="transparent"
+                        cardSize="2xl"
+                        direction="horizontal"
+                    >
+                        <AboutCard />
+                        <ChoosePathCard />
+                    </CardMainSection>
+                ) : (
+                    <CardMainSectionDesktop
+                        bgColor="transparent"
+                        cardSize="2xl"
+                        scaleLastCard={true}
+                        lastCardInitialScale={0.3}
+                    >
+                        <AboutCard />
+                        <ChoosePathCard />
+                    </CardMainSectionDesktop>
+                )}
 
-                <section className="relative w-full bg-white">
+                <section
+                    className="relative w-full bg-white"
+                    style={{ zIndex: 1 }}
+                >
                     <Test />
                 </section>
             </div>

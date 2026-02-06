@@ -1,8 +1,12 @@
 import SpotlightCard from "./CardAnimation/SpotlightCard";
 
-export default function ChoosePathCard() {
+export default function ChoosePathCard({ contentOpacity = 1 }) {
     return (
-        <SpotlightCard className="w-full h-full" bgColor="#E3F2FD">
+        <SpotlightCard
+            className="w-full h-full"
+            bgColor="#E3F2FD"
+            contentOpacity={contentOpacity}
+        >
             <div className="max-w-200">
                 <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[1.05] mb-10 uppercase text-gray-900">
                     Choose Your Path
