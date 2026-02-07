@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react'
 import OlympicRings from './OlympicRings'
+import GoogleOlympicsHeading from './GoogleOlympicsHeading'
 
 const MobileParallaxBackground = ({ onRingsFadeStart = () => {} }) => {
+    const [showHeading, setShowHeading] = useState(false);
     const { scrollYProgress } = useScroll();
     const x = useSpring(scrollYProgress, {
         stiffness: 100,
@@ -35,8 +38,17 @@ const MobileParallaxBackground = ({ onRingsFadeStart = () => {} }) => {
                     assembleY={0.5}
                     finalY={0.15}
                     startFromBelow={true}
-                    onFadeStart={onRingsFadeStart}
+                    onFadeStart={() => {
+                        onRingsFadeStart();
+                        // Delay showing heading until rings are mostly faded (0.5s after fade starts)
+                        setTimeout(() => setShowHeading(true), 500);
+                    }}
                 />
+
+                 {/*Google Olympics Heading - appears after rings fade`*/}
+                <div className="absolute inset-0 z-[101] flex items-start justify-center pt-[11vh] px-4">
+                    <GoogleOlympicsHeading show={showHeading} />
+                </div>
 
                 {/* Pisa Tower - Mobile Optimized */}
                 {/* <motion.div
@@ -78,9 +90,9 @@ const MobileParallaxBackground = ({ onRingsFadeStart = () => {} }) => {
                     className='absolute w-full h-auto z-0 bottom-0'
                 >
                     <motion.img
-                        src="/MobileOlympicsImages/greatwall-final.png"
+                        src="/public/greatwall-mobile.png"
                         alt="great wall"
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[90vh] sm:h-[50vh] z-0 object-cover"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[80vh] sm:h-[50vh] z-0 object-cover"
                     />
 
                 </motion.div>
@@ -90,13 +102,13 @@ const MobileParallaxBackground = ({ onRingsFadeStart = () => {} }) => {
                     style={{ y: colosseum }}
                     initial={{ y: 300 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 1, delay:2, ease: "easeInOut" }}
-                    className='absolute w-full h-[70vh] z-80 bottom-0'
+                    transition={{ duration: 1.5, delay:2.3, ease: "easeInOut" }}
+                    className='absolute w-full h-auto z-80 bottom-0 border-amber-950'
                 >
                     <motion.img
                         src="/olympicsImages/Colosseum.png"
                         alt="Colosseum"
-                        className='absolute -bottom-60 mx-auto h-[95vh] z-80 object-contain'
+                        className='absolute -bottom-60 w-[100vw] h-[100vh] z-80 object-contain'
                     />
                 </motion.div>
             </motion.div>
