@@ -7,7 +7,7 @@ import CardMainSectionDesktop from "@/Advitya26Components/CardAnimation/CardMain
 import AboutCard from "@/Advitya26Components/AboutCard";
 import LoadingTextScroller from "@/Advitya26Components/LoadingTextScroller";
 import ChoosePathCard from "@/Advitya26Components/ChoosePathCard";
-import Test from "@/Advitya26Components/Test";
+import FAQ from "@/Advitya26Components/FAQ";
 
 import "@/Advitya26Components/AdvityaMain.css";
 
@@ -84,10 +84,11 @@ function Advitya() {
                 )}
 
                 <section
-                    className="relative w-full bg-white"
+                    id="faq-section"
+                    className="relative w-full"
                     style={{ zIndex: 1 }}
                 >
-                    <Test />
+                    <FAQ />
                 </section>
             </div>
         </>
