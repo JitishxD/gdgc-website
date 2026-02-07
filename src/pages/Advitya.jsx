@@ -6,8 +6,9 @@ import CardMainSection from "@/Advitya26Components/CardAnimation/CardMainSection
 import CardMainSectionDesktop from "@/Advitya26Components/CardAnimation/CardMainSectionDesktop";
 import AboutCard from "@/Advitya26Components/AboutCard";
 import LoadingTextScroller from "@/Advitya26Components/LoadingTextScroller";
-import ChoosePathCard from "@/Advitya26Components/ChoosePathCard";
-import FAQ from "@/Advitya26Components/FAQ";
+import ChoosePathCard from "@/Advitya26Components/ChoosePathCardDir/ChoosePathCard";
+import ChoosePathCardMobile from "@/Advitya26Components/ChoosePathCardDir/ChoosePathCardMobile";
+import Test from "@/Advitya26Components/Test";
 
 import "@/Advitya26Components/AdvityaMain.css";
 
@@ -64,11 +65,12 @@ function Advitya() {
                     <CardMainSection
                         bgColor="transparent"
                         cardSize="2xl"
-                        direction="horizontal"
+                        scaleLastCard={true}
+                        lastCardInitialScale={0.3}
                     >
                         <AboutCard />
                         <LoadingTextScroller />
-                        <ChoosePathCard />
+                        <ChoosePathCardMobile />
                     </CardMainSection>
                 ) : (
                     <CardMainSectionDesktop
@@ -84,11 +86,10 @@ function Advitya() {
                 )}
 
                 <section
-                    id="faq-section"
-                    className="relative w-full"
+                    className="relative w-full bg-white"
                     style={{ zIndex: 1 }}
                 >
-                    <FAQ />
+                    <Test />
                 </section>
             </div>
         </>
