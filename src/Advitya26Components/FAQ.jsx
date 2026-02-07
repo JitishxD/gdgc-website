@@ -177,9 +177,9 @@ export default function FAQ() {
 
   return (
     <div className="w-full min-h-screen bg-[#0a0a0a] relative" style={{ fontFamily: "'Poppins', sans-serif" }}>
-      {/* Grid Background - Fixed */}
+      {/* Grid Background - Only for FAQ section */}
       <div 
-        className="fixed inset-0 z-0"
+        className="absolute inset-0 z-0"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(50,50,50,0.6) 1px, transparent 1px),
@@ -192,14 +192,6 @@ export default function FAQ() {
       {/* Header with Grid Background */}
       <div 
         className="relative z-20 px-6 md:px-28 py-12"
-        style={{
-          backgroundColor: '#0a0a0a',
-          backgroundImage: `
-            linear-gradient(to right, rgba(50,50,50,0.6) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(50,50,50,0.6) 1px, transparent 1px)
-          `,
-          backgroundSize: '180px 180px'
-        }}
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <h1 className="text-white text-[100px] font-semibold mb-6 md:mb-0 tracking-tight">
@@ -230,7 +222,7 @@ export default function FAQ() {
         <div className="relative">
           {/* General Section */}
           {activeTab === 'general' && (
-            <div className="animate-fadeIn space-y-4">
+            <div className="transition-opacity duration-300 ease-in space-y-4">
               {faqData.general.map((faq, index) => (
                 <FAQCard key={index} {...faq} />
               ))}
@@ -239,7 +231,7 @@ export default function FAQ() {
 
           {/* Registration Section */}
           {activeTab === 'registration' && (
-            <div className="animate-fadeIn space-y-4">
+            <div className="transition-opacity duration-300 ease-in space-y-4">
               {faqData.registration.map((faq, index) => (
                 <FAQCard key={index} {...faq} />
               ))}
@@ -248,7 +240,7 @@ export default function FAQ() {
 
           {/* Hackathon Section */}
           {activeTab === 'hackathon' && (
-            <div className="animate-fadeIn space-y-4">
+            <div className="transition-opacity duration-300 ease-in space-y-4">
               {faqData.hackathon.map((faq, index) => (
                 <FAQCard key={index} {...faq} />
               ))}
