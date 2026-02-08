@@ -17,7 +17,7 @@ const ScrollLinkedSection = () => {
       image: "/Panel_member1.jpeg",
       github: "https://github.com/Anubhavi-Jaiswal",
       linkedin: "https://www.linkedin.com/in/anubhavi-jaiswal/",
-      vision: "As the Organizer of GDGC VIT Bhopal, it has been rewarding to build a vibrant technical community rooted in curiosity and collaboration. Through workshops, hackathons, and hands-on initiatives, we’ve empowered students to connect theory with real-world technology and grow as developers and leaders."
+      vision: "As Organizer of GDGC VIT Bhopal, I’ve built a collaborative tech community through workshops, hackathons, and hands-on initiatives, empowering students as developers and leaders."
     },
     {
       name: "Akshay Kumar Mishra",
@@ -25,7 +25,7 @@ const ScrollLinkedSection = () => {
       image: "/Panel-member2.jpeg",
       github: " https://github.com/akshayvibe",
       linkedin: " https://www.linkedin.com/in/itsakshay/",
-      vision: "Being the Tech Lead at GDGC VIT Bhopal has been an incredibly rewarding experience. The community fosters innovation, collaboration, and continuous learning, giving students real opportunities to grow as developers and leaders. It’s inspiring to work with passionate peers and build impactful solutions together."
+      vision: "Being Tech Lead at GDGC VIT Bhopal has been rewarding, fostering innovation and collaboration while empowering students to grow as developers, leaders, and solution builders."
     },
     {
       name: "Gagan Bhardwaj",
@@ -33,7 +33,7 @@ const ScrollLinkedSection = () => {
       image: "/Panel_member3.jpeg",
       github:  "https://github.com/gagan771",
       linkedin: "https://www.linkedin.com/in/gagan-bhardwaj-b8831a292",
-      vision: "Had an amazing 2 years with GDGC, starting as a Web Team Member and growing into the role of Tech Co-Lead. Learned, shared, and collaborated with some truly like-minded people. Super grateful for the community, the growth, and the experiences. Excited to see what’s ahead! 🚀✨"
+      vision: "Spent two amazing years at GDGC, growing from Web Team Member to Tech Co-Lead, learning, collaborating, and grateful for community, growth, and experiences ahead. 🚀✨"
     },
     {
       name: "Priyansh Chaudhary",
@@ -41,7 +41,7 @@ const ScrollLinkedSection = () => {
       image: "/Panel_member4.jpeg",
       github: "#",
       linkedin: "#",
-      vision: "Being the Non-Tech Lead at GDG on Campus is about driving our vision forward with precision and accountability . It’s a thrill to lead such a talented team, pushing boundaries and reaching new heights together while keeping the vibes high. 🏎️"
+      vision: "Being Non-Tech Lead at GDG on Campus means driving vision with accountability, leading a talented team, pushing boundaries, and reaching new heights together—always with great vibes. 🏎️"
     },
     {
       name: "Devanshi Sharma",
@@ -49,7 +49,7 @@ const ScrollLinkedSection = () => {
       image: "/Panel_member5.jpeg",
       github: "https://github.com/devanshi2208",
       linkedin: " https://www.linkedin.com/in/devanshi-sharma-183461324",
-      vision: "I started my journey in this club as an Event Team Member and today proudly serve as the Non-Tech Co-Lead. Being academically driven, slightly introverted, and highly ambitious, I believe in growing through consistency, dedication, and meaningful contribution"
+      vision: "Started as an Event Team Member and now serve as Non-Tech Co-Lead, driven by ambition, consistency, dedication, and meaningful contributions toward personal and collective growth."
     }
   ];
 
@@ -117,7 +117,9 @@ const ScrollLinkedSection = () => {
 
   return (
     <div className="scroll-linked-section">
-      <div className="left-panel">
+      <h2 className="team-heading">MEET OUR TEAM</h2>
+      <div className="panels-row">
+        <div className="left-panel">
         <div className="vision-card">
           <h2 className="vision-title">Our Vision</h2>
           <div className="vision-content">
@@ -186,6 +188,7 @@ const ScrollLinkedSection = () => {
           <div className="scroll-spacer-bottom"></div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
