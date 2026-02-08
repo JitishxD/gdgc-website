@@ -139,6 +139,21 @@
   height: auto;
 }
 
+.wheel {
+  width: 70px;
+  height: auto;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .left-bracket {
 }
 
@@ -287,7 +302,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .scroll-linked-section {
-    gap: 2rem;
+    gap: 4rem;
     padding: 2.5rem 1.5rem;
   }
 
@@ -332,6 +347,13 @@
   .bracket {
     width: 49px;
   }
+  .wheel {
+    width: 45px;
+  }
+
+  .heading-container {
+    gap: 0.25rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -365,6 +387,16 @@
 
   .bracket {
     width: 40px;
+  }
+  .wheel {
+    width: 30px;
+  }
+  .wheel {
+    width: 40px;
+  }
+
+  .heading-container {
+    gap: 0.25rem;
   }
 }
 
@@ -438,6 +470,10 @@
     width: 33px;
   }
 
+  .heading-container {
+    gap: 0.25rem;
+  }
+
   .profile-card {
     flex-direction: column;
     text-align: center;
@@ -482,5 +518,6 @@
   .social-icon svg {
     width: 14px;
     height: 14px;
+    
   }
 }

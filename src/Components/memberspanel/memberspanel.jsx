@@ -3,6 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 import "./memberspanel.css";
 import leftBracket from "@/assets/EventsSectionAssets/leftBracket.svg";
 import rightBracket from "@/assets/EventsSectionAssets/rightBracket.svg";
+import wheel from "@/assets/EventsSectionAssets/wheel.svg";
 const ScrollLinkedSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -119,9 +120,11 @@ const ScrollLinkedSection = () => {
   return (
     <div className="scroll-linked-section">
       <div className="heading-container">
+        <img src={wheel} alt="wheel" className="wheel left-wheel" />
         <img src={leftBracket} alt="left bracket" className="bracket left-bracket" />
         <h2 className="team-heading">Meet our Team</h2>
         <img src={rightBracket} alt="right bracket" className="bracket right-bracket" />
+        <img src={wheel} alt="wheel" className="wheel right-wheel" />
       </div>
       <div className="panels-row">
         <div className="left-panel">
