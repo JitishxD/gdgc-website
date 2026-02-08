@@ -117,7 +117,7 @@ function DesktopNavBar() {
     };
 
     return (
-        <nav className="hidden lg:flex items-center justify-between w-full h-12 px-8 py-4 bg-white">
+        <nav className="hidden lg:flex items-center justify-between w-full h-12 px-8 py-4 bg-transparent">
             {/* Logo */}
             <Link
                 to="/"

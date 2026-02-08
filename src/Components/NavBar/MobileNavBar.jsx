@@ -135,7 +135,7 @@ function MobileNavBar() {
                 className="relative"
             >
                 {/* Navbar */}
-                <nav className="flex items-center justify-between px-4 py-3 bg-background">
+                <nav className="flex items-center justify-between px-4 py-3 bg-transparent">
                     <Link
                         to="/"
                         className="flex items-center gap-2"
@@ -152,7 +152,7 @@ function MobileNavBar() {
                     <CollapsibleTrigger asChild>
                         <button
                             type="button"
-                            className="flex items-center justify-center size-9 rounded-md border-2 border-black bg-background"
+                            className="flex items-center justify-center size-9 rounded-md border-2 border-black bg-transparent"
                             aria-label={open ? "Close menu" : "Open menu"}
                         >
                             {open ? (
@@ -165,8 +165,19 @@ function MobileNavBar() {
                 </nav>
 
                 {/* Dropdown Panel (slides from under navbar) */}
-                <CollapsibleContent className="absolute left-0 right-0 top-full z-50 bg-background border-2 border-black border-t-0 border-l-0 border-r-0 shadow-md">
-                    <div className="px-3">
+                <CollapsibleContent className="absolute left-0 right-0 top-full z-50 bg-background border-2 border-black border-t-0 border-l-0 border-r-0 shadow-md overflow-hidden">
+                    {/* This Noise overlay needed seperately because dropdown is positioned outside the header */}
+                    <div
+                        className="absolute inset-0 z-0 pointer-events-none opacity-[0.9]"
+                        style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                            backgroundRepeat: "repeat",
+                            backgroundSize: "180px 180px",
+                            mixBlendMode: "multiply",
+                        }}
+                        aria-hidden="true"
+                    />
+                    <div className="relative z-10 px-3">
                         <MobileNavLink
                             to="/"
                             onNavigate={closeMenu}
@@ -242,12 +253,15 @@ function MobileNavBar() {
                         <MobileNavLink to="/about" onNavigate={closeMenu}>
                             About
                         </MobileNavLink>
-                        <MobileNavLink to="/event-registration" onNavigate={closeMenu}>
+                        <MobileNavLink
+                            to="/event-registration"
+                            onNavigate={closeMenu}
+                        >
                             Register Event
                         </MobileNavLink>
                     </div>
 
-                    <div className="p-4">
+                    <div className="relative z-10 p-4">
                         <Link
                             to="/join"
                             onClick={closeMenu}
