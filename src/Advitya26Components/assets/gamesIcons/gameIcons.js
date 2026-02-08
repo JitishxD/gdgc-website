@@ -1,0 +1,10 @@
+export { default as game1 } from './game1.png';
+export { default as game2 } from './game2.png';
+export { default as game3 } from './game3.png';
+export { default as game4 } from './game4.png';
+export { default as game5 } from './game5.png';
+export { default as game6 } from './game6.png';
+export { default as game7 } from './game7.png';
+export { default as game8 } from './game8.png';
+export { default as game9 } from './game9.png';
+export { default as game10 } from './game10.png';

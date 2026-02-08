@@ -97,14 +97,18 @@ export default function CardMainSection({
             const viewportCenter = window.innerWidth / 2;
 
             // Position of last card center relative to track start
-            const lastCardCenterInTrack = (lastCardRect.left - trackRect.left) + (lastCardRect.width / 2);
+            const lastCardCenterInTrack =
+                lastCardRect.left - trackRect.left + lastCardRect.width / 2;
 
             // Scroll needed to bring last card center to viewport center
             const scrollToCenter = lastCardCenterInTrack - viewportCenter;
             const scrollWidth = Math.max(0, scrollToCenter);
 
             const scaleDistance = scaleLastCard ? window.innerHeight * 1.5 : 0;
-            const totalDistance = scrollWidth + scaleDistance;
+            // Extra scroll buffer so the animation finishes before the pin ends
+            // This prevents the FAQ from appearing while the card is still scaling
+            const scrollBuffer = scaleLastCard ? window.innerHeight * 0.6 : 0;
+            const totalDistance = scrollWidth + scaleDistance + scrollBuffer;
 
             // Update container height based on actual scroll width
             setDynamicHeight(`${window.innerHeight + totalDistance}px`);
@@ -126,12 +130,13 @@ export default function CardMainSection({
                 gsap.set(lastCardInner, { borderRadius: "24px" });
             }
 
-            // Create main timeline with TWO phases
+            // Create main timeline with THREE phases (scroll, scale, hold)
             const mainTL = gsap.timeline({ paused: true });
 
             // Calculate durations based on scroll distances
             const phase1Duration = scrollWidth / totalDistance; // Horizontal scroll phase
             const phase2Duration = scaleDistance / totalDistance; // Scale phase
+            const bufferDuration = scrollBuffer / totalDistance; // Hold phase for scrub catchup
 
             // PHASE 1: Horizontal scroll until last card is CENTERED
             mainTL.to(
@@ -170,14 +175,19 @@ export default function CardMainSection({
                 ); // Start after phase 1
             }
 
+            // PHASE 3: Hold final state while scrub catches up
+            if (bufferDuration > 0) {
+                mainTL.to({}, { duration: bufferDuration });
+            }
+
             // Single ScrollTrigger with proper pinning
             ScrollTrigger.create({
                 trigger: container,
                 start: "top top",
                 end: () => `+=${totalDistance}`,
                 pin: section,
-                pinSpacing: true,
-                scrub: 0.8,
+                pinSpacing: false,
+                scrub: 0.1,
                 animation: mainTL,
                 invalidateOnRefresh: true,
                 onUpdate: (self) => {
@@ -243,12 +253,17 @@ export default function CardMainSection({
     return (
         <div
             ref={containerRef}
-            style={{ height: dynamicHeight, position: "relative", zIndex: 2 }}
+            style={{
+                height: dynamicHeight,
+                position: "relative",
+                zIndex: 2,
+                overflow: "hidden",
+            }}
         >
             <section
                 ref={sectionRef}
                 className="h-screen flex items-center overflow-hidden"
-                style={{ backgroundColor: bgColor }}
+                style={{ backgroundColor: bgColor, zIndex: 10 }}
             >
                 <div
                     ref={trackRef}
@@ -274,9 +289,13 @@ export default function CardMainSection({
                                 ref={(el) => (cardRefs.current[index] = el)}
                                 className={`${SIZE_CLASSES[cardSize]} shrink-0 will-change-transform`}
                                 style={{
-                                    width: isSecondToLast ? "auto" : `${cardWidthVw}vw`,
+                                    width: isSecondToLast
+                                        ? "auto"
+                                        : `${cardWidthVw}vw`,
                                     transformOrigin: "center center",
-                                    marginRight: isSecondToLast ? "20vw" : undefined, // Extra spacing after LoadingTextScroller
+                                    marginRight: isSecondToLast
+                                        ? "20vw"
+                                        : undefined, // Extra spacing after LoadingTextScroller
                                 }}
                             >
                                 {scaleLastCard && isLastCard ? (

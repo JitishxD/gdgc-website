@@ -1,6 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+
+import * as gameIcons from "@/Advitya26Components/assets/gamesIcons/gameIcons";
 
 const games = [
     {
@@ -8,70 +10,80 @@ const games = [
         name: "Uno Flip",
         description:
             "Teams take turns flipping two cards to find matching pairs, using memory and strategy to score the most matches.",
-        icon: "a",
+        icon: gameIcons.game1,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 2,
         name: "Gemini",
         description:
             "Players recreate a given AI-generated image as closely as possible by writing effective text prompts—no image upload allowed.",
-        icon: "b",
+        icon: gameIcons.game2,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 3,
         name: "Tower Defence",
         description:
             "Teams build and defend a cup tower while teammates throw balls to knock down the opponent's tower within a time limit.",
-        icon: "c",
+        icon: gameIcons.game3,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 4,
         name: "Maze Game",
         description:
             "A blindfolded player navigates a taped maze using only indirect communication and teamwork from teammates.",
-        icon: "d",
+        icon: gameIcons.game4,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 5,
         name: "Human Tic Tac Toe",
         description:
             "Players race to claim positions on a 3×3 grid, aiming to form three in a row before the opposing team.",
-        icon: "e",
+        icon: gameIcons.game5,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 6,
         name: "5-Legged Sprint",
         description:
             "Four players run a race while their legs are tied together, testing balance, coordination, and teamwork.",
-        icon: "f",
+        icon: gameIcons.game6,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 7,
         name: "Red Light Green Light",
         description:
             'Players move only during "Green Light" and must freeze instantly at "Red Light" to avoid elimination.',
-        icon: "g",
+        icon: gameIcons.game7,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 8,
         name: "Pass the Hoop",
         description:
             "A team passes a hoop through every member while holding hands the entire time, without breaking the chain.",
-        icon: "h",
+        icon: gameIcons.game8,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 9,
         name: "Auction Round",
         description:
             "Teams bid their points in auctions to win mystery boxes containing hidden rewards or penalties.",
-        icon: "i",
+        icon: gameIcons.game9,
+        imgStyle: { transform: "scale(1.3)" },
     },
     {
         id: 10,
         name: "Code Relay",
         description:
             "Teams solve a coding problem in relay style, with each member coding for only 10 seconds and no communication allowed.",
-        icon: "j",
+        icon: gameIcons.game10,
+        imgStyle: { transform: "scale(1.3)" },
     },
 ];
 
@@ -222,7 +234,7 @@ export default function ChoosePathCard({ contentOpacity = 1 }) {
             {/* Title */}
             <div className="relative text-center mb-3 z-10">
                 <h1 className="font-serif font-black text-2xl md:text-3xl lg:text-4xl text-[#3d2817] tracking-widest mb-2 uppercase">
-                    Heading
+                    📌Game's Boards
                 </h1>
                 <div className="inline-block px-4 py-1 bg-[rgba(139,69,19,0.15)] border-2 border-[#654321] rounded-full">
                     <span className="font-serif italic text-xs md:text-sm text-[#654321]">
@@ -268,10 +280,15 @@ export default function ChoosePathCard({ contentOpacity = 1 }) {
                             {/* Game circle */}
                             <div
                                 ref={(el) => (circleRefs.current[index] = el)}
-                                className={`relative w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-linear-to-br from-[#f4e4c1] to-[#d4af37] border-3 border-[#654321] rounded-full flex items-center justify-center shadow-lg transition-shadow duration-300 ${hoveredGame === game.id ? "shadow-[0_0_20px_rgba(218,165,32,0.7)]" : ""}`}
+                                className={`relative w-12 h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 bg-linear-to-br from-[#f4e4c1] to-[#d4af37] border-3 border-[#654321] rounded-full flex items-center justify-center shadow-lg transition-shadow duration-300 ${hoveredGame === game.id ? "shadow-[0_0_20px_rgba(218,165,32,0.7)]" : ""}`}
                             >
-                                <div className="text-lg md:text-xl lg:text-2xl">
-                                    {game.icon}
+                                <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-full p-2">
+                                    <img
+                                        src={game.icon}
+                                        alt={game.name}
+                                        className="w-full h-full object-contain filter sepia-[0.5] hover:sepia-0 transition-all duration-300"
+                                        style={game.imgStyle}
+                                    />
                                 </div>
                                 <div className="absolute -top-1 -right-1 w-4 h-4 md:w-5 md:h-5 bg-[#8B0000] text-white border-2 border-[#654321] rounded-full flex items-center justify-center font-bold text-[8px] md:text-[10px] shadow-md">
                                     {game.id}
