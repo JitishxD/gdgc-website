@@ -140,13 +140,13 @@
 /* ================= REGISTER STAMP STICKER ================= */
 .register-btn{
   position: absolute;
-  bottom: 18%;
-  right: -10px;
+  bottom: 8rem;
+  right: clamp(0.75rem, 12vw, 10rem);
   background: #ff3b3b;
   color: white;
   font-weight: 900;
   font-size: 16px;
-  padding: 12px 28px;
+  padding: 10px 8px;
   text-decoration: none;
   transform: rotate(-15deg);
   border-radius: 4px;
@@ -214,8 +214,8 @@
   .register-btn{
     font-size: 14px;
     padding: 10px 20px;
-    bottom: 20%;
-    right: -6px;
+    bottom: 9rem;
+    right: clamp(0.75rem, 20vw, 10rem);
   }
 
   .close-btn{
