@@ -101,7 +101,7 @@ const mobileGridPositions = [
     { row: 5, col: 2 },
 ];
 
-export default function ChoosePathCardMobile({ contentOpacity = 1 }) {
+export default function ChoosePathCardMobile({ contentOpacity = 1, ...props }) {
     const [selectedGame, setSelectedGame] = useState(null);
     const gridRef = useRef(null);
     const linesContainerRef = useRef(null);
@@ -234,6 +234,7 @@ export default function ChoosePathCardMobile({ contentOpacity = 1 }) {
 
     return (
         <div
+            {...props}
             className="relative w-full h-full bg-linear-to-br from-[#d2b48c] via-[#c19a6b] to-[#d2b48c] p-3 pb-6 overflow-hidden flex flex-col items-center"
             style={{ boxShadow: "inset 0 0 60px rgba(101, 67, 33, 0.3)" }}
         >

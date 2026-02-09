@@ -257,12 +257,11 @@ export default function CardMainSection({
                 height: dynamicHeight,
                 position: "relative",
                 zIndex: 2,
-                overflow: "hidden",
             }}
         >
             <section
                 ref={sectionRef}
-                className="h-screen flex items-center overflow-hidden"
+                className="h-screen flex items-center"
                 style={{ backgroundColor: bgColor, zIndex: 10 }}
             >
                 <div

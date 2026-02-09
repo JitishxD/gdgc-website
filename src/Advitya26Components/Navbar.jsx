@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Home, Gamepad2, Users, Store, Info, HelpCircle, Menu, X } from 'lucide-react';
+import { Home, Gamepad2, Trophy, Images, HelpCircle, Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Home, underlineColor: '#3b82f6' },
   { href: '/games', label: 'Games', icon: Gamepad2, underlineColor: '#000000' },
-  { href: '/community', label: 'Community', icon: Users, underlineColor: '#eab308' },
-  { href: '/store', label: 'Store', icon: Store, underlineColor: '#22c55e' },
-  { href: '/about', label: 'About', icon: Info, underlineColor: '#ef4444' },
-  { href: '/advitya/faqs', label: 'FAQs', icon: HelpCircle, underlineColor: '#8b5cf6' },
+  { href: '/leaderboard', label: 'Leaderboard', icon: Trophy, underlineColor: '#f59e0b' },
+  { href: '/advitya#gallery-section', label: 'Event Gallery', icon: Images, underlineColor: '#06b6d4' },
+  { href: '/advitya/faqs', label: 'FAQ', icon: HelpCircle, underlineColor: '#8b5cf6' },
 ];
 
 export function GlobalNavbar({ showLogo = true }) {

@@ -101,7 +101,7 @@ const gridPositions = [
     { row: 3, col: 2 },
 ];
 
-export default function ChoosePathCard({ contentOpacity = 1 }) {
+export default function ChoosePathCard({ contentOpacity = 1, ...props }) {
     const [hoveredGame, setHoveredGame] = useState(null);
     const gridRef = useRef(null);
     const linesContainerRef = useRef(null);
@@ -247,6 +247,7 @@ export default function ChoosePathCard({ contentOpacity = 1 }) {
 
     return (
         <div
+            {...props}
             className="relative w-full h-full bg-linear-to-br from-[#d2b48c] via-[#c19a6b] to-[#d2b48c] p-4 md:p-6 pb-8 overflow-visible"
             style={{ boxShadow: "inset 0 0 100px rgba(101, 67, 33, 0.3)" }}
         >

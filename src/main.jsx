@@ -17,6 +17,7 @@ import AllEvents from "./pages/AllEventsPage";
 import AboutUs from "./pages/AboutUs";
 import EventRegistration from "./pages/EventRegistration";
 import Advitya from "./pages/Advitya";
+import Games from "./pages/Games";
 import AdvityaFAQs from "./Advitya26Components/AdvityaFAQs";
 import { ScrollProvider } from "./context/ScrollContext";
 
@@ -65,6 +66,7 @@ createRoot(document.getElementById("root")).render(
                             element={<EventRegistration />}
                         />{" "}
                         <Route path="about" element={<AboutUs />} />
+                        <Route path="games" element={<Games />} />
                         <Route path="*" element={<Navigate to="/" replace />} />
                     </Route>
                     <Route path="/advitya" element={<Advitya />} />
