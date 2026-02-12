@@ -86,7 +86,7 @@ const designDomain = {
         lead: {
             name: "Kshitij Tripathi",
             role: "Design Lead",
-            avatar: "/Domainimages/N-TechDomainimages/Design&contentteamimages/KSHITIJ TRIPATHI 23BCE11736.HEIC",
+            avatar: "/Domainimages/N-TechDomainimages/Design&contentteamimages/KSHITIJ TRIPATHI.jpg",
             bio: "Visual designer creating impactful designs for tech communities.",
             linkedin: "https://www.linkedin.com/in/kshitij-tripathi-163415275",
             github: "https://github.com/KTPhantom",

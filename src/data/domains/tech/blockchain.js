@@ -116,6 +116,7 @@ const blockchainDomain = {
                 linkedin: "https://www.linkedin.com/in/krishna-barot-75580b375",
                 github: "https://github.com/barotkrishna1702",
             },
+             
         ],
     },
 };

@@ -24,6 +24,60 @@ function HeroSectionMobile() {
             aria-label="Mobile hero"
             className="relative w-full overflow-hidden bg-white text-black"
         >
+            <style>{`
+  .advitya-flag-mobile {
+  position: absolute;
+  left: 12px;   /* moved to left */
+  top: 10px;
+  padding: 7px 16px;
+  border-radius: 24px;
+  font-weight: 800;
+  font-size: 0.7rem;
+  color: #000;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  z-index: 50;
+}
+
+.advitya-flag-mobile.second {
+  top: 40px;
+}
+  .advitya-flag {
+  background: red !important;
+}
+
+  .advitya-flag.blue {
+  background-color: #4f8cff !important;
+  color: white;
+}
+
+.advitya-flag.green {
+  background-color: #4cff7a !important;
+  color: black;
+}
+
+
+
+
+  .advitya-flag-mobile::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background: inherit;
+    border-radius: 0 30px 30px 0;
+    transform: skewX(-20deg);
+  }
+
+  .advitya-flag-mobile:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  }
+`}</style>
+
+
             {/* Decorative background */}
             <motion.img
                 src={Cloud_Elem_1}
@@ -73,6 +127,26 @@ function HeroSectionMobile() {
                   ease: "easeInOut",
                 }}
             />
+            <motion.a
+  href="/advitya"
+  className="advitya-flag-mobile"
+  animate={{ y: [0, -5, 0] }}
+  transition={{ duration: 2.5, repeat: Infinity }}
+>
+  advitya
+</motion.a>
+
+<motion.a
+  href="https://forms.gle/geUHuLxd2PenFN4s8"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="advitya-flag-mobile second"
+  animate={{ y: [0, 5, 0] }}
+  transition={{ duration: 2.5, repeat: Infinity }}
+>
+  register
+</motion.a>
+
 
             {/* this kite is not in design */}
             {/* <img

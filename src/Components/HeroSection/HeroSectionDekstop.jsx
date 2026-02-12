@@ -17,7 +17,9 @@ export default function HeroSectionDesktop() {
     <section
       aria-label="Desktop hero"
       className="relative w-full min-h-[calc(80vh-4rem)] overflow-x-hidden bg-white text-black"
+      
     >
+
       {/* Decorative elements */}
       <motion.img
       // src="/olympicsImages/dinosaur-trex.gif"
@@ -121,6 +123,7 @@ export default function HeroSectionDesktop() {
           ease: "easeInOut",
         }}
       />
+
 
       {/* Main content */}
       <div className="relative mx-auto grid min-h-0 max-w-7xl grid-rows-[1fr_auto] pt-8 pb-0 bottom-0">

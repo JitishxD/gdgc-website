@@ -163,6 +163,13 @@ const webDevDomain = {
                 linkedin: "https://www.linkedin.com/in/jitish",
                 github: "https://github.com/JitishxD",
             },
+             {
+                name: "Ilesh",
+                role: "Core Member",
+                avatar: "https://placehold.co/128x128",
+                linkedin: "https://www.linkedin.com/in/jitish",
+                github: "https://github.com/JitishxD",
+            },
         ],
     },
 };

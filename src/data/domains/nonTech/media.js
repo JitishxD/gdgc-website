@@ -102,14 +102,14 @@ const mediaDomain = {
             {
                 name: "Karthik Gupta",
                 role: "Core Member",
-                avatar: "/Domainimages/N-TechDomainimages/Videographyteamimages./GUPTA KARTHIK JEETENDRABHAI .jpg",
+                avatar: "/Domainimages/N-TechDomainimages/Videographyteamimages/GUPTA KARTHIK.jpeg",
                 linkedin: "https://www.linkedin.com/in/karthik-gupta-k2112",
                 github: "",
             },
             {
                 name: "Saksham Raut",
                 role: "Core Member",
-                avatar: "Domainimages/N-TechDomainimages/Videographyteamimages/GUPTA KARTHIK JEETENDRABHAI.jpg",
+                avatar: "/Domainimages/N-TechDomainimages/Videographyteamimages/RAUT SAKSHAM.jpeg",
                 linkedin: "https://www.linkedin.com/in/saksham-raut-11b10b377/",
                 github: "https://github.com/saksham110206",
             },

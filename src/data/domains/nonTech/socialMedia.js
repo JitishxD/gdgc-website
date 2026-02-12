@@ -119,7 +119,7 @@ const socialMediaDomain = {
             {
                 name: "Akriti Khantwal",
                 role: "Core Member",
-                avatar: "/Domainimages/N-TechDomainimages/Socialmedia&marketingteamimages/AKRITI KHANTWAL 24BAI10401.jpgs",
+                avatar: "/Domainimages/N-TechDomainimages/Socialmedia&marketingteamimages/AKRITI KHANTWAL 24BAI10401.jpg",
                 linkedin:
                     "https://www.linkedin.com/in/akriti-khantwal-503a4b359",
                 github: "",
@@ -142,7 +142,7 @@ const socialMediaDomain = {
             {
                 name: "Ashwin Sharma",
                 role: "Core Member",
-                avatar: "https://placehold.co/128x128",
+                avatar: "/Domainimages/N-TechDomainimages/Socialmedia&marketingteamimages/Screenshot_20260131-021537_Photos - ASHWIN SHARMA 24BCE10351.png",
                 linkedin:
                     "https://www.linkedin.com/in/ashwin-sharma-52b96035a/",
                 github: "https://github.com/ASHWIN-48",
