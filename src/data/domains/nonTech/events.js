@@ -90,15 +90,17 @@ const eventsDomain = {
             github: "https://github.com/srivastavaaaa",
             email: "",
         },
-        coLead:{
-            name: "Pragati Rai",
-            role: "Events Co-Lead",
-            avatar: "/Domainimages/N-TechDomainimages/Eventteamimages/PRAGATI RAI 24BCY10123.jpg",
-            bio: "Events coordinator focusing on logistics and partnerships.",
-            linkedin: "",
-            github: "",
-            email: "",
-        },
+        coLead: [
+            {
+                name: "Pragati Rai",
+                role: "Events Co-Lead",
+                avatar: "/Domainimages/N-TechDomainimages/Eventteamimages/PRAGATI RAI 24BCY10123.jpg",
+                bio: "Events coordinator focusing on logistics and partnerships.",
+                linkedin: "",
+                github: "",
+                email: "",
+            },
+        ],
        
         members: [
             {

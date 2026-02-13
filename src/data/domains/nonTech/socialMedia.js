@@ -91,23 +91,27 @@ const socialMediaDomain = {
             github: "",
             email: "",
         },
-        coLead: {
-            name: "Atiksh Prasad",
-            role: "Social Media Co-Lead",
-            avatar: "/Domainimages/N-TechDomainimages/Socialmedia&marketingteamimages/ATIKSH PRASAD 24BCE10313.jpg",
-            bio: "Content strategist and community manager focused on growth.",
-            linkedin: "https://www.linkedin.com/in/atiksh-prasad",
-            github: "",
-            email: "",
-        },
-        members: [
+        coLead: [
+            {
+                name: "Atiksh Prasad",
+                role: "Social Media Co-Lead",
+                avatar: "/Domainimages/N-TechDomainimages/Socialmedia&marketingteamimages/ATIKSH PRASAD 24BCE10313.jpg",
+                bio: "Content strategist and community manager focused on growth.",
+                linkedin: "https://www.linkedin.com/in/atiksh-prasad",
+                github: "",
+                email: "",
+            },
             {
                 name: "Vaani Aidasani",
-                role: "Co-Lead",
+                role: "Social Media Co-Lead",
                 avatar: "/Domainimages/N-TechDomainimages/Socialmedia&marketingteamimages/VAANI AIDASANI 24BCE10742.jpg",
+                bio: "",
                 linkedin: "https://www.linkedin.com/in/vaaniaidasani/",
                 github: "",
+                email: "",
             },
+        ],
+        members: [
             {
                 name: "Sachin Sundareswaran",
                 role: "Core Member",

@@ -82,23 +82,27 @@ const mediaDomain = {
             github: "",
             email: "",
         },
-        coLead: {
-            name: "Yash Khatwani",
-            role: "Media Co-Lead",
-            avatar: "/Domainimages/N-TechDomainimages/Videographyteamimages/Yash Khatwani 23bce10362.jpeg",
-            bio: "Videographer and editor working on event coverage and tutorials.",
-            linkedin: "https://www.linkedin.com/in/yash-khatwani-133bb9353",
-            github: "https://github.com/YashKhatwani915",
-            email: "",
-        },
-        members: [
+        coLead: [
+            {
+                name: "Yash Khatwani",
+                role: "Media Co-Lead",
+                avatar: "/Domainimages/N-TechDomainimages/Videographyteamimages/Yash Khatwani 23bce10362.jpeg",
+                bio: "Videographer and editor working on event coverage and tutorials.",
+                linkedin: "https://www.linkedin.com/in/yash-khatwani-133bb9353",
+                github: "https://github.com/YashKhatwani915",
+                email: "",
+            },
             {
                 name: "Shashwat Roy",
-                role: "Co-Lead",
+                role: "Media Co-Lead",
                 avatar: "/Domainimages/N-TechDomainimages/Videographyteamimages/SHASHWAT ROY 24MIM10019.jpeg",
+                bio: "",
                 linkedin: "https://www.linkedin.com/in/shashwat-roy-955308315/",
                 github: "https://github.com/Shash-roy",
+                email: "",
             },
+        ],
+        members: [
             {
                 name: "Karthik Gupta",
                 role: "Core Member",

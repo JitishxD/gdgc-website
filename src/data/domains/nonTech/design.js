@@ -92,23 +92,27 @@ const designDomain = {
             github: "https://github.com/KTPhantom",
             email: "",
         },
-        coLead: {
-            name: "Harshika Sunkara",
-            role: "Design Co-Lead",
-            avatar: "/Domainimages/N-TechDomainimages/Design&contentteamimages/SUNKARA HARSHIKA 24BOE10050.png",
-            bio: "Product designer focused on UX systems and prototyping.",
-            linkedin: "https://linkedin.com/in/harshika-sunkara-11143537a",
-            github: "https://github.com/harshika-nub",
-            email: "",
-        },
-        members: [
+        coLead: [
+            {
+                name: "Harshika Sunkara",
+                role: "Design Co-Lead",
+                avatar: "/Domainimages/N-TechDomainimages/Design&contentteamimages/SUNKARA HARSHIKA 24BOE10050.png",
+                bio: "Product designer focused on UX systems and prototyping.",
+                linkedin: "https://linkedin.com/in/harshika-sunkara-11143537a",
+                github: "https://github.com/harshika-nub",
+                email: "",
+            },
             {
                 name: "Akash Kumar Pandey",
-                role: "Co-Lead",
+                role: "Design Co-Lead",
                 avatar: "/Domainimages/N-TechDomainimages/Design&contentteamimages/AKASH KUMAR PANDEY 24BEY10064.jpg",
+                bio: "",
                 linkedin: "https://www.linkedin.com/in/akash-pandey-987466190",
                 github: "https://github.com/a4kashhh",
+                email: "",
             },
+        ],
+        members: [
             {
                 name: "Anika Mangla",
                 role: "Core Member",

@@ -30,7 +30,10 @@ function PersonCard({ person, roleLabel, domainColor }) {
 
       {/* Text */}
       <div className="flex-1 min-w-0">
-        <h4 className="text-lg font-bold break-words leading-tight">
+        <h4
+          className="text-lg font-bold leading-tight break-words line-clamp-2"
+          title={person.name}
+        >
           {person.name}
         </h4>
         <p className="text-sm font-medium" style={{ color: domainColor }}>
@@ -76,6 +79,13 @@ function DomainTeam({ team, domainColor }) {
 
   const { lead, coLead, members } = team;
 
+  // There can be 2 colead hehehe
+  const coLeads = coLead
+    ? Array.isArray(coLead)
+      ? coLead
+      : [coLead]
+    : [];
+
   return (
     <section className="mb-12">
       <h2 className="flex items-center gap-2 text-xl font-bold mb-6">
@@ -97,17 +107,22 @@ function DomainTeam({ team, domainColor }) {
         </>
       )}
 
-      {/* Co Lead */}
-      {coLead && (
+      {/* Co Lead(s) */}
+      {coLeads.length > 0 && (
         <>
           <h3 className="text-sm font-semibold uppercase mt-8 mb-3 text-gray-500">
-            Co Lead
+            {coLeads.length > 1 ? "Co Leads" : "Co Lead"}
           </h3>
-          <PersonCard
-            person={coLead}
-            roleLabel="Co Lead"
-            domainColor={domainColor}
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {coLeads.map((cl, i) => (
+              <PersonCard
+                key={i}
+                person={cl}
+                roleLabel="Co Lead"
+                domainColor={domainColor}
+              />
+            ))}
+          </div>
         </>
       )}
 
