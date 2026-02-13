@@ -318,12 +318,11 @@ export default function ChoosePathCard({ contentOpacity = 1 }) {
                                 ref={(el) => (circleRefs.current[index] = el)}
                                 className={`relative w-12 h-12 md:w-14 md:h-14 lg:w-20 lg:h-20 bg-linear-to-br from-[#f4e4c1] to-[#d4af37] border-3 border-[#654321] rounded-full flex items-center justify-center shadow-lg transition-shadow duration-300 ${hoveredGame === game.id ? "shadow-[0_0_20px_rgba(218,165,32,0.7)]" : ""}`}
                             >
-                                <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-full p-2">
+                                <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-full">
                                     <img
                                         src={game.icon}
                                         alt={game.name}
-                                        className="w-full h-full object-contain filter sepia-[0.5] hover:sepia-0 transition-all duration-300"
-                                        style={game.imgStyle}
+                                        className="w-full h-full object-fill filter sepia-[0.5] hover:sepia-0 transition-all duration-300"
                                     />
                                 </div>
                                 <div className="absolute -top-1 -right-1 w-4 h-4 md:w-5 md:h-5 bg-[#8B0000] text-white border-2 border-[#654321] rounded-full flex items-center justify-center font-bold text-[8px] md:text-[10px] shadow-md">
@@ -342,10 +341,11 @@ export default function ChoosePathCard({ contentOpacity = 1 }) {
                             {hoveredGame === game.id && (
                                 <motion.div
                                     className={`absolute w-44 md:w-52 ${gridPos.row === 3
-                                        ? "bottom-full mb-1"
-                                        : gridPos.col >= 3
-                                            ? "right-full mr-1 top-0"
-                                            : "left-full ml-1 top-0"
+                                        ? "bottom-full mb-0 left-0" // Explicitly left-0 for Row 3
+                                        : (gridPos.row === 2
+                                            ? (gridPos.col >= 3 ? "right-full mr-0 top-1/2 -translate-y-1/2" : "left-full ml-0 top-1/2 -translate-y-1/2")
+                                            : (gridPos.col >= 3 ? "right-full mr-0 top-0" : "left-full ml-0 top-0")
+                                        )
                                         }`}
                                     style={{ zIndex: 1000 }}
                                     initial={{ opacity: 0, scale: 0.95 }}
@@ -359,6 +359,13 @@ export default function ChoosePathCard({ contentOpacity = 1 }) {
                                         <p className="font-serif text-[10px] md:text-xs leading-snug text-[#4a3728]">
                                             {game.description}
                                         </p>
+                                        <div className="mt-2 rounded-md overflow-hidden border border-[#8B4513]">
+                                            <img
+                                                src={game.icon}
+                                                alt={game.name}
+                                                className="w-full h-auto object-cover"
+                                            />
+                                        </div>
                                     </div>
                                 </motion.div>
                             )}

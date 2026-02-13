@@ -307,11 +307,11 @@ export default function ChoosePathCardMobile({ contentOpacity = 1 }) {
                                 ref={(el) => (circleRefs.current[index] = el)}
                                 className={`relative w-11 h-11 bg-linear-to-br from-[#f4e4c1] to-[#d4af37] border-2 border-[#654321] rounded-full flex items-center justify-center shadow-md transition-all duration-200 ${selectedGame === game.id ? "shadow-[0_0_15px_rgba(218,165,32,0.8)] scale-110" : ""}`}
                             >
-                                <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-full p-1.5">
+                                <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-full">
                                     <img
                                         src={game.icon}
                                         alt={game.name}
-                                        className="w-full h-full object-contain filter sepia-[0.5] transition-all duration-300"
+                                        className="w-full h-full object-fill filter sepia-[0.5] transition-all duration-300"
                                         style={game.imgStyle}
                                     />
                                 </div>
@@ -330,9 +330,9 @@ export default function ChoosePathCardMobile({ contentOpacity = 1 }) {
                             {/* Tooltip on tap */}
                             {selectedGame === game.id && (
                                 <motion.div
-                                    className={`absolute w-40 ${gridPos.row >= 4
-                                        ? "bottom-full mb-1"
-                                        : "top-full mt-1"
+                                    className={`absolute w-40 ${gridPos.row >= 3
+                                        ? "bottom-full mb-0"
+                                        : "top-full mt-0"
                                         } left-1/2 -translate-x-1/2`}
                                     style={{ zIndex: 1000 }}
                                     initial={{ opacity: 0, scale: 0.95 }}
@@ -346,6 +346,13 @@ export default function ChoosePathCardMobile({ contentOpacity = 1 }) {
                                         <p className="font-serif text-[9px] leading-snug text-[#4a3728]">
                                             {game.description}
                                         </p>
+                                        <div className="mt-1.5 rounded-md overflow-hidden border border-[#8B4513]">
+                                            <img
+                                                src={game.icon}
+                                                alt={game.name}
+                                                className="w-full h-auto object-cover"
+                                            />
+                                        </div>
                                     </div>
                                 </motion.div>
                             )}
